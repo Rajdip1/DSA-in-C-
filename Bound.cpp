@@ -52,14 +52,25 @@ int lastOccurance(int arr[], int size, int key){
     return ans;
 }
 
-int main(){
-    int even[11] = {1,2,3,3,3,3,3,3,3,3,5};
+int totalOccr(int n1, int n2){
+    int t = (n2-n1)+1;
+    return t;
+}
 
-    int answer = firstOccurance(even,11,3);
+int main(){
+    int even[10] = {1,2,3,3,3,3,3,3,3,5};
+
+    int answer = firstOccurance(even,10,6);
     cout<<"First Occurance: "<<answer<<endl;
 
-    int answer2 = lastOccurance(even,11,3);
+    int answer2 = lastOccurance(even,10,6);
     cout<<"Last Occurance: "<<answer2<<endl;
+
+    int total = totalOccr(answer,answer2);
+    cout<<total;
+
+    // int total = (answer2-answer)+1;
+    // cout<<"Total no of occurance is: "<<total<<endl;
 
     return 0;
 }
