@@ -1,16 +1,16 @@
 #include<iostream>
 using namespace std;
 
-bool isPresent(int arr[][4], int target, int row, int col) {
-    for(int i=0; i<3; i++) {
-        for(int j=0; j<4; j++) {
-            if(arr[i][j]==target) {
-                return 1;
-            }
-        }
-    }
-    return 0;
-}
+// bool isPresent(int arr[][4], int target, int row, int col) {
+//     for(int i=0; i<3; i++) {
+//         for(int j=0; j<4; j++) {
+//             if(arr[i][j]==target) {
+//                 return 1;
+//             }
+//         }
+//     }
+//     return 0;
+// }
 
 int main() {
     // int arr[3][4];
@@ -31,30 +31,30 @@ int main() {
     //     cout<<endl;
     // }
 
-    int arr[3][4];
+    int arr[3][3];
 
     for(int i=0; i<3; i++) {
-        for(int j=0; j<4; j++) {
+        for(int j=0; j<3; j++) {
             cin>>arr[i][j];
         }
     }
 
     for(int i=0; i<3; i++) {
-        for(int j=0; j<4; j++) {
-            cout<<arr[i][j]<<" ";
+        for(int j=0; j<3; j++) {
+            cout<<arr[j][i]<<" ";
         }
         cout<<endl;
     }
 
-    cout<<"Enter element to search: "<<endl;
-    int k;  //target element
-    cin>>k;
+    // cout<<"Enter element to search: "<<endl;
+    // int k;  //target element
+    // cin>>k;
 
-    if(isPresent(arr,k,3,4)) {
-        cout<<"Present"<<endl;
-    }
-    else {
-        cout<<"Not present"<<endl;
-    }
+    // if(isPresent(arr,k,3,4)) {
+    //     cout<<"Present"<<endl;
+    // }
+    // else {
+    //     cout<<"Not present"<<endl;
+    // }
 
 }

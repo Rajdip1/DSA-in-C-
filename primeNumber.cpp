@@ -9,6 +9,10 @@ int main(){
 
     bool isPrime = 1;
 
+    if(n<=1) {
+        cout<<"Not prime num";
+    }
+
     for(int i=2; i<n; i++){
         //rem = 0, Not a prime
         if(n%i==0){
