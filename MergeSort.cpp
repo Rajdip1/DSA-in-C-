@@ -2,7 +2,7 @@
 using namespace std;
 
 void conquer(int arr[], int start, int mid, int end) {
-    int mergeArr[] = new int[end-start+1];
+    int *mergeArr = new int[end-start+1];
 
     int idx1 = start;      //tracking first part of array
     int idx2 = mid+1;      //tracking second part of array
@@ -34,7 +34,9 @@ void conquer(int arr[], int start, int mid, int end) {
     //copying merged array into original array
     for(int i=0, j=start; i<(end-start+1); i++, j++) {
         arr[j] = mergeArr[i];
-    }     
+    } 
+
+    delete[] mergeArr;    
 }
 
 void divide(int arr[], int start, int end) {
@@ -48,8 +50,8 @@ void divide(int arr[], int start, int end) {
 }
 
 int main() {
-    int arr[] = {4,3,11,5,6,10};
-    int n = arr.size();
+    int arr[6] = {4,3,11,5,6,10};
+    int n = 6;
 
     divide(arr,0,n-1);
 
