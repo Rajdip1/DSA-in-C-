@@ -144,6 +144,21 @@ Node* floyedDetectLoop(Node* head) {
     return NULL;
 }
 
+Node* getStartingNode(Node* head) {
+    if(head==NULL) {
+        return NULL;
+    }
+
+    Node* interSection = floyedDetectLoop(head);
+    Node* slow = head;
+
+    while(slow != interSection) {
+        slow = slow->next;
+        interSection = interSection->next;
+    }
+    return slow;
+}
+
 void print(Node* tail) {  //traversing list
 
     Node* temp = tail;
