@@ -159,6 +159,17 @@ Node* getStartingNode(Node* head) {
     return slow;
 }
 
+void removeLoop(Node* head) {
+    if(head==NULL) return NULL;
+
+    Node* startOfLoop = getStartingNode(head);
+    Node* temp = startOfLoop;
+    while(temp->next != startOfLoop) {
+        temp = temp->next;
+    }
+    temp->next = NULL;
+}
+
 void print(Node* tail) {  //traversing list
 
     Node* temp = tail;
