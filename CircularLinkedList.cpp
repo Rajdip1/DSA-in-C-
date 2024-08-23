@@ -124,7 +124,7 @@ bool detectLoop(Node* head) {
 }
 
 Node* floyedDetectLoop(Node* head) {
-    if(head==NULL) {
+    if(head==NULL || head->next==NULL) {
         return NULL;
     }
     Node* slow = head;
@@ -145,11 +145,16 @@ Node* floyedDetectLoop(Node* head) {
 }
 
 Node* getStartingNode(Node* head) {
-    if(head==NULL) {
+    if(head==NULL || head->next==NULL) {
         return NULL;
     }
 
     Node* interSection = floyedDetectLoop(head);
+
+    if(interSection==NULL) {
+        return NULL;
+    }
+
     Node* slow = head;
 
     while(slow != interSection) {
@@ -160,9 +165,14 @@ Node* getStartingNode(Node* head) {
 }
 
 void removeLoop(Node* head) {
-    if(head==NULL) return NULL;
+    if(head==NULL || head->next==NULL) return NULL;
 
     Node* startOfLoop = getStartingNode(head);
+
+    if(startOfLoop==NULL) {
+        return NULL;
+    }
+
     Node* temp = startOfLoop;
     while(temp->next != startOfLoop) {
         temp = temp->next;
